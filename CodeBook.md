@@ -10,7 +10,7 @@ This Code Book briefly describes both the contents (e.g. variables) and transfor
 ##### Original Research and Data Collection
 The "raw" data set that was used as input for this initial analysis consisted of a collection of data files.  According to the original documentation associated with the raw data, the data was collected by observing 30 volunteers within an age range of 19-48 years. Each person observed performed six different activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) while wearing a smartphone (Samsung Galaxy S II) on their waist. Using the phone's embedded accelerometer and gyroscope, the 3-axial linear acceleration and 3-axial angular velocity measurements were captured at a constant rate of 50Hz and from their a total of 561 different features/variables were produced for each observation. Although the original experiment produced 561 distinct variables/features across the six activities for each of the 30 subjects, for the purposes of this analysis, only the standard deviation and mean feature values were extracted and subsequently processed.
 
-The following original data files where used as input for creating the tidy data set:
+The following original data files were used as input for creating the tidy data set:
 
 - **features.txt** - contains the label names (1 per row) of all 561 variables captured
 
@@ -22,7 +22,7 @@ The following original data files where used as input for creating the tidy data
 
 - **subject_train.txt** For each observation of the 561 variables contained in the x_train.txt file, this file provides the integer id of the associated subject being observed. Each row of this file corresponds directly to the same row in the x_train.txt data file. 
 
-The following three files are related in the same way as their corresponding "test" counterparts
+The following three files are related in the same way as their corresponding "train" counterparts
 - **y_test.txt**
 - **x_test.txt**
 - **subject_test.txt**
