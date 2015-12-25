@@ -1,14 +1,15 @@
 ## Getting and Cleaning Data
 ### Course Project
 ---
-**run_analysis.R**
-**Version 1.0**
-**Compiled with R version 3.2.2**
----
+**Script Name:** run_analysis.R
+**Version:** 1.0
+**R version:** Tested with R version 3.2.2
+
 #### Description
 The following paragraphs briefly describe the requirements for executing the run_analysis.R script. The purpose of "run_analysis.R" is to load the raw unprocessed data files associated with the "Human Activity Recognition Using Smartphones" experiment and transform the data into tidy data. Specifically, "run_analysis.R" extracts the mean and standard deviations of the features contained across all of the various files produced by the Human Activity experiment and from that create a tidy data set.  The resulting tidy data set is a single file that correlates the "subject" (e.g. the volunteer), and the specific activity (i.e. Walking, Laying, Standing, etc...) with the observed features (e.g. sensor signals - accelerometer and gyroscope measurements). 
 
 In accordance with the class project requirements, run_analysis.R performs the following:
+
 1. Merges the training and the test sets to create one data set.
 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
 3. Uses descriptive activity names to name the activities in the data set
@@ -17,6 +18,7 @@ In accordance with the class project requirements, run_analysis.R performs the f
 
 #### Execution Requirements
 run_analysis.R has the following dependencies:
+
 1. Package "dplyr"
 2. Package "data.table"
 3. The "UCI HAR Dataset.zip" downloaded and unzipped in the current working directory.  The file can be downloaded at the following URL:
