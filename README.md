@@ -1,8 +1,8 @@
 ## Getting and Cleaning Data
 ### Course Project
 ---
-**Script Name -** run_analysis.R
-**Version -** 1.0
+**Script Name -** run_analysis.R <BR>
+**Version -** 1.0 <BR>
 **R version -** Tested with R version 3.2.2
 
 #### Description
