@@ -7,7 +7,7 @@ This Code Book briefly describes both the contents (e.g. variables) and transfor
 [UCI HAR Dataset.zip](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
 
 #### Study Design
-**Original Research and Data Collection**
+##### Original Research and Data Collection
 The "raw" data set that was used as input for this initial analysis consisted of a collection of data files.  According to the original documentation associated with the raw data, the data was collected by observing 30 volunteers within an age range of 19-48 years. Each person observed performed six different activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) while wearing a smartphone (Samsung Galaxy S II) on their waist. Using the phone's embedded accelerometer and gyroscope, the 3-axial linear acceleration and 3-axial angular velocity measurements were captured at a constant rate of 50Hz and from their a total of 561 different features/variables were produced for each observation. Although the original experiment produced 561 distinct variables/features across the six activities for each of the 30 subjects, for the purposes of this analysis, only the standard deviation and mean feature values were extracted and subsequently processed.
 
 The following original data files where used as input for creating the tidy data set:
@@ -27,49 +27,52 @@ The following three files are related in the same way as their corresponding "te
 - **x_test.txt**
 - **subject_test.txt**
 
-**Data Transformation Steps**
+##### Data Transformation Steps
 In order to produce a single tidy data set, the raw data files associated with the "train" and "test" data files were initially processed separately and then later combined to produce a final single tidy data set.  For each of the test/train group of raw input files, the variables contained in the x_train/test data sets where renamed in accordance with the "features.txt" file described above. It was assumed that each row of the features.txt file corresponded directly to each column of the x_train.txt and x_test.txt data sets.  Additionally, the activity and subject ids found in the y_test/train.txt files and subject_test/train.txt files described previously were added as additional columns/variables creating a single data set containing the original 561 observations along with their corresponding subject and activity. For readability, the activity ids were replaced using the label data found in the activity_labels.txt file as highlighted previously. For each of the test/train input files, only the standard deviation and mean variables where selected out for further processing.
 
 A single tidy data set was then created by combining the transformed test/train input files just described.  This single data set was subsequently sorted based on subject and activity respectively.  Finally, a single summary tidy data set was produced which contains the average of all of the final variables selected (e.g. only the standard deviation and mean variables) for each subject, for each of the six different activities.
 
 #### Code Book
-Variable	Units		Description
-subject	1-30		Id representing 1 of 30 test subjects
-activity	Label		One of six activities being tested: 						WALKING, WALKING_UPSTAIRS, 							WALKING_DOWNSTAIRS, SITTING, STANDING, 					LAYING 	
+The following section briefly describes the variables found in the analysis_summary.txt tidy data set.
 
-In accordance with the course project instructions, the following variables found in the analysis tidy data set represent the average of the mean and standard deviation variables contained in the original unprocessed raw files. Each row of the analysis_summary.txt tidy data set represents the average of the following variables for each subject for each of the six activities:
+| Variable | Units | Description |
+| -------- |:-----:| -----------:|
+| subject  | 1-30  |	Id representing 1 of 30 test subjects |
+|activity|	Label| One of six activities being tested: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING|
 
-tBodyAcc-mean()-XYX
-tBodyAcc-std()-XYZ
-tGravityAcc-mean()-XYZ
-tGravityAcc-std()-XYZ
-tBodyAccJerk-mean()-XYZ
-tBodyAccJerk-std()-XYZ
-tBodyGyro-mean()-XYZ
-tBodyGyro-std()-XYZ
-tBodyGyroJerk-mean()-XYZ
-tBodyGyroJerk-std()-XYZ
-tBodyAccMag-mean()
-tBodyAccMag-std()
-tGravityAccMag-mean()
-tGravityAccMag-std()
-tBodyAccJerkMag-mean()
-tBodyAccJerkMag-std()
-tBodyGyroMag-mean()
-tBodyGyroMag-std()
-tBodyGyroJerkMag-mean()
-tBodyGyroJerkMag-std()
-fBodyAcc-mean()-XYZ
-fBodyAcc-std()-XYZ
-fBodyAccJerk-mean()-XYZ
-fBodyAccJerk-std()-XYZ
-fBodyGyro-mean()-XYZ
-fBodyGyro-std()-XYZ
-fBodyAccMag-mean()
-fBodyAccMag-std()
-fBodyBodyAccJerkMag-mean()
-fBodyBodyAccJerkMag-std()
-fBodyBodyGyroMag-mean()
-fBodyBodyGyroMag-std()
-fBodyBodyGyroJerkMag-mean()
-fBodyBodyGyroJerkMag-std()
+In accordance with the course project instructions, the following variables found in the analysis_summary.txt tidy data set represent the average of the mean and standard deviation variables extracted out of the original unprocessed raw files. Each row/observation of the summary data set correlates the subject/person under test to one of the six activities previously mentioned for a total of 180 observations. Every variable name ending in "-XYZ" represents a set of three variables of measurement taken along the X, Y, and Z axis respectively:
+
+- tBodyAcc-mean()-XYZ
+- tBodyAcc-std()-XYZ
+- tGravityAcc-mean()-XYZ
+- tGravityAcc-std()-XYZ
+- tBodyAccJerk-mean()-XYZ
+- tBodyAccJerk-std()-XYZ
+- tBodyGyro-mean()-XYZ
+- tBodyGyro-std()-XYZ
+- tBodyGyroJerk-mean()-XYZ
+- tBodyGyroJerk-std()-XYZ
+- tBodyAccMag-mean()
+- tBodyAccMag-std()
+- tGravityAccMag-mean()
+- tGravityAccMag-std()
+- tBodyAccJerkMag-mean()
+- tBodyAccJerkMag-std()
+- tBodyGyroMag-mean()
+- tBodyGyroMag-std()
+- tBodyGyroJerkMag-mean()
+- tBodyGyroJerkMag-std()
+- fBodyAcc-mean()-XYZ
+- fBodyAcc-std()-XYZ
+- fBodyAccJerk-mean()-XYZ
+- fBodyAccJerk-std()-XYZ
+- fBodyGyro-mean()-XYZ
+- fBodyGyro-std()-XYZ
+- fBodyAccMag-mean()
+- fBodyAccMag-std()
+- fBodyBodyAccJerkMag-mean()
+- fBodyBodyAccJerkMag-std()
+- fBodyBodyGyroMag-mean()
+- fBodyBodyGyroMag-std()
+- fBodyBodyGyroJerkMag-mean()
+- fBodyBodyGyroJerkMag-std()
